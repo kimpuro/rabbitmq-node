@@ -26,7 +26,7 @@ amqp.connect('amqp://localhost', function(error0, connection) {
             console.log('count', count);
             channel.ack(msg);
         }, {
-            noAck: true
+            noAck: false
         });
     });
 });
