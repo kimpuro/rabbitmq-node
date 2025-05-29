@@ -16,9 +16,9 @@ function sendMessage() {
             var msg = 'send1';
 
             channel.assertQueue(queue, {
-                durable: false
+                durable: true
             });
-            channel.sendToQueue(queue, Buffer.from(msg));
+            channel.sendToQueue(queue, Buffer.from(msg), { persistent: true });
 
             console.log(" [x] Sent %s", msg);
             setTimeout(function() {
