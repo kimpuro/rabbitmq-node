@@ -9,7 +9,6 @@ function getCountAndSend() {
             try {
                 const json = JSON.parse(data);
                 const count = json.count;
-                // count 값을 3003번 포트로 POST 요청
                 fetch('http://localhost:3004/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
