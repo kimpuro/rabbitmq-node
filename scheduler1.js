@@ -1,5 +1,4 @@
 const http = require('http');
-const fetch = require('node-fetch');
 
 function getCountAndSend() {
     http.get('http://localhost:3001/count', (res) => {
@@ -10,7 +9,7 @@ function getCountAndSend() {
             try {
                 const json = JSON.parse(data);
                 const count = json.count;
-                // count 값을 3003번 포트로 POST 요청
+                // count 값을 3003번 포트로 POST 요청 (내장 fetch 사용)
                 fetch('http://localhost:3003/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
